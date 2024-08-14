@@ -8,7 +8,7 @@ export const Home = () => {
         <div className='homepage'>
             <header className='homepage-header'>
                 <div className='logo'>
-                    <img src="" alt='Deniot Logo' />
+                    <img src="/logo.png" alt='Deniot ' />
                 </div>
                 <nav className='homepage-nav'>
                     <ul>

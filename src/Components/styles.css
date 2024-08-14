@@ -156,6 +156,49 @@
     }
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    /* Ensures the logo scales properly */
+    max-height: 60px;
+    /* Set a maximum height for the logo */
+    object-fit: contain;
+    /* Ensures the image fits within its container */
+}
+
+.homepage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #f8f8f8;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.homepage-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.homepage-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.homepage-nav ul li a:hover {
+    color: #007BFF;
+    /* Change this color to match your theme */
+}
 
 
 @keyframes featuresFadeIn {
