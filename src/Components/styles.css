@@ -1,0 +1,205 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #333;
+    --light-color: #f4f4f4;
+    --font-color: #fff;
+    --spacing: 20px;
+}
+
+.homepage {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+.homepage-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing);
+    background-color: var(--secondary-color);
+}
+
+.logo img {
+    width: 150px;
+}
+
+.homepage-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.homepage-nav ul li {
+    margin-left: var(--spacing);
+}
+
+.homepage-nav ul li a {
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+.homepage-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Banner */
+.homepage-banner {
+    text-align: center;
+    padding: 100px 20px;
+    background: url('../banner.png') no-repeat center center;
+    background-size: cover;
+    color: var(--font-color);
+    animation: bannerZoom 10s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes bannerZoom {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.homepage-banner h1,
+.homepage-banner p {
+    opacity: 0;
+    animation: textFadeIn 3s ease-in forwards;
+}
+
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner-button {
+    padding: 10px 30px;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.banner-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+@keyframes featuresFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.homepage-features {
+    display: flex;
+    justify-content: space-between;
+    /* Ensures the features are spaced evenly */
+    flex-direction: row;
+    /* Aligns the features along the x-axis */
+    gap: 20px;
+    /* Adds spacing between each feature */
+    padding: 50px 20px;
+    background-color: var(--light-color);
+    opacity: 0;
+    animation: featuresFadeIn 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.feature {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    /* Ensures all features take up equal space */
+    max-width: 300px;
+    /* Optional: Set a max-width for each feature box */
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .homepage-features {
+        grid-template-columns: 1fr;
+        /* Stack features in a single column on small screens */
+    }
+}
+
+
+
+@keyframes featuresFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature {
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: textFadeIn 1.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.feature p {
+    font-size: 16px;
+    opacity: 0;
+    animation: textFadeIn 2s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+/* Footer */
+.homepage-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+}
